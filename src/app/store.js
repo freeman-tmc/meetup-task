@@ -29,7 +29,7 @@ const eventsReducer = (state = initialState, action) => {
 					}
 				}
 			});
-			return {...state, listOfCities: cities, allEvents: allEvents};
+			return {...state, listOfCities: cities, allEvents: allEvents, fetching: false};
 		case 'FETCH_CONNECTION_ERROR':
 			return {...state, error: 'Connection error'};
 		default:
