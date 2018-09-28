@@ -48,7 +48,7 @@ footer {
     width: 90%;
   }
 }
-.event-box p, .event-box h4 {
+.event-box p, .event-box h3 {
   margin: 10px 0;
 }
 .event-box .img-box {
@@ -62,8 +62,8 @@ footer {
 }
 .event-box .img-box .date {
   position: absolute;
-  left: 10%;
-  top: 10%;
+  left: 5%;
+  top: 5%;
   width: 25%;
   background: white;
   color: #f64060;
@@ -81,6 +81,23 @@ footer {
   color: #7797b6;
 }
 
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #f64060;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .heading {
   text-align: center;
   margin: 20px 0;
@@ -113,24 +130,6 @@ main .city:hover {
 @media screen and (max-width: 700px) {
   main .city {
     width: 90%;
-  }
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #f64060;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 

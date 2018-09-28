@@ -12,8 +12,6 @@ const middlewares = [thunk];
 
 const eventsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case 'FETCH_EVENTS_REQUEST':
-			return {...state, fetching: true};
 		case 'FETCH_EVENTS_ERROR':
 			return {...state, fetching: false, error: 'Error fetching data'};
 		case 'FETCH_EVENTS_SUCCESS':

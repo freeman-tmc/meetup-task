@@ -8,7 +8,7 @@ const Event = (props) => {
                 <img src={eventImg} alt="" />
                 <p className="date">{props.local_date}</p>
             </div>
-            <h4 className="name">{props.name}</h4>
+            <h3 className="name">{props.name}</h3>
             <p className="time">Time: {props.local_time}</p>
             <p className="details" dangerouslySetInnerHTML={{ __html: props.description}}></p>
             <div className="location">

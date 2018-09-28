@@ -3,21 +3,26 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Event from './Event';
 
-
 const CityEvents = (props) => {
-
-    let cityEvents = props.state.allEvents.filter(el => {
-        console.log(el.venue.city);
+    
+    let events = props.state.allEvents.filter(el => {
         return el.venue.city === props.match.params.city;
-    })
-    return (
-        <React.Fragment>
-            <h1 className="heading">Location: {props.match.params.city}</h1>
-            <main>
-                {cityEvents.map((el, i) => <Event {...el} key={i} />)}
-            </main>
-        </React.Fragment>
-    );
+    });
+
+    if (events.length > 0) {
+        return (
+            <React.Fragment>
+                <h1 className="heading">Location: {props.match.params.city}</h1>
+                <main>
+                    {events.map((el, i) => <Event {...el} key={i} />)}
+                </main>
+            </React.Fragment>
+        );
+    } else {
+        props.history.push('/');
+        return '';
+    }
+ 
 }
 
 const mapStateToProps = (state) => {

@@ -14,16 +14,15 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log(this.props.state.fetching);
-        
+
         return (
             <React.Fragment>
                 <h1 className="heading">Locations</h1>
-                <main>
-                    {this.props.state.fetching
+                <main>{!this.props.state.error
+                    ? this.props.state.fetching
                         ? <div className="loader"></div>
                         : this.props.state.listOfCities.map((el, i) => <p className="city" key={i} onClick={() => this.showDetails(el)}>{el}</p>)
-                    }
+                    : <h1 className="error">{this.props.state.error}</h1>}
                 </main>
             </React.Fragment>
         );
