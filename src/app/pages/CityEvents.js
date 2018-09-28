@@ -11,9 +11,12 @@ const CityEvents = (props) => {
         return el.venue.city === props.match.params.city;
     })
     return (
-        <div>
-            {cityEvents.map((el, i) => <Event {...el} key={i} /> )}
-        </div>
+        <React.Fragment>
+            <h1 className="heading">Location: {props.match.params.city}</h1>
+            <main>
+                {cityEvents.map((el, i) => <Event {...el} key={i} />)}
+            </main>
+        </React.Fragment>
     );
 }
 

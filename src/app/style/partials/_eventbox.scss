@@ -1,0 +1,42 @@
+.event-box {
+    width: 42%;
+    margin: 5% 4%;
+    word-wrap: break-word;
+    font-size: 0.8em;
+    overflow: hidden;
+    @media screen and (max-width: 700px) {
+       width: 90%; 
+    }
+    p, h4 {
+        margin: 10px 0;
+    }
+    .img-box {
+        position: relative;
+        width: 100%;
+        img {
+            border-radius: 2%;
+            width: 100%;
+            height: auto;
+        }
+        .date {
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            width: 25%;
+            background: white;
+            color: #f64060;
+            border-radius: 5px;
+            font-weight: 600;
+            padding: 5% 0;
+            text-align: center;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    a {
+        text-decoration: none;
+        color: #7797b6;
+    }
+}

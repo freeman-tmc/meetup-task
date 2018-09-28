@@ -14,14 +14,18 @@ class Home extends React.Component {
     }
 
     render() {
-
+        console.log(this.props.state.fetching);
+        
         return (
-            <div>
-                {this.props.fetching
-                ? null
-                : this.props.state.listOfCities.map((el, i) => <p key={i} onClick={() => this.showDetails(el)}>{el}</p>)
-                }
-            </div>
+            <React.Fragment>
+                <h1 className="heading">Locations</h1>
+                <main>
+                    {this.props.state.fetching
+                        ? <div className="loader"></div>
+                        : this.props.state.listOfCities.map((el, i) => <p className="city" key={i} onClick={() => this.showDetails(el)}>{el}</p>)
+                    }
+                </main>
+            </React.Fragment>
         );
     }
 }
