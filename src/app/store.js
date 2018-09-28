@@ -22,7 +22,6 @@ const eventsReducer = (state = initialState, action) => {
 			action.payload.forEach(el => {    
 				if (el.venue) {
 					if (el.venue.country === 'rs') { 
-						console.log('prosao');
 						allEvents.push(el);
 						if (!cities.includes(el.venue.city)) {
 							cities.push(el.venue.city);

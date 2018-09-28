@@ -1,23 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Event from './Event';
 
 
-class CityEvents extends React.Component {
-	
+const CityEvents = (props) => {
 
-	render() {
-		let cityEvents = this.props.state.allEvents.filter(el => {
-			console.log(el.venue.city);
-			
-			return el.venue.city == this.props.match.params.city;
-		})
-		return (
-			<div>
-				{cityEvents.map((el, i) => <p key={i} >{el.name}</p>)}
-			</div>
-		);
-	}
+    let cityEvents = props.state.allEvents.filter(el => {
+        console.log(el.venue.city);
+        return el.venue.city === props.match.params.city;
+    })
+    return (
+        <div>
+            {cityEvents.map((el, i) => <Event {...el} key={i} /> )}
+        </div>
+    );
 }
 
 const mapStateToProps = (state) => {
@@ -25,9 +22,5 @@ const mapStateToProps = (state) => {
         state
     }
 }
-
-// const mapDispatchToProps = {
-//     getEventsAction
-// }
 
 export default withRouter(connect(mapStateToProps)(CityEvents));
